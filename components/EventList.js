@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
     },
     eventList: {
-        height: 400,
+        height: 300,
     },
     nextEventTitle: {
         color: 'white',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         color: '#231f40',
         paddingTop: 20,
         fontFamily: 'SFProDisplay_medium',
-        // width:300,
+        alignItems: 'center',
     },
     subTitle: {
         color: '#fff',

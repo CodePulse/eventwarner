@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Ben Lamptey",
-    "slug": "EventWarner",
+    "name": "Event Traffic Warner",
+    "slug": "event-traffic-warner",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -11,11 +11,10 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/imgs/icon-final.jpg",
     "splash": {
-      "image": "",
-      "resizeMode": "contain",
-      "backgroundColor": "#231f40"
+      "image": "./assets/imgs/etf-splash-final.jpg",
+      "resizeMode": "cover"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.charismaconcept.eventtrafficewarner",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.charismaconcept.eventtrafficewarner",
+      "versionCode": 1
     }
   }
 }
