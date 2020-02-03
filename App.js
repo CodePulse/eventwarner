@@ -1,28 +1,39 @@
-import React, {Component} from 'react';
-import {StyleSheet, View, Dimensions, ImageBackground, Text, SafeAreaView} from 'react-native';
+import React, {Component, useState} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
 import EventList from './components/EventList';
+import Header from './components/Header';
 import * as Font from 'expo-font';
+import {AppLoading} from "expo";
 
-const {width, height} = Dimensions.get('screen');
+
+
 
 class App extends Component {
-    componentDidMount() {
-        Font.loadAsync({
-            'montserrat': require('./assets/fonts/montserrat/Montserrat-Regular.ttf'),
-            'montserrat-light': require('./assets/fonts/montserrat/Montserrat-Light.ttf'),
-            'montserrat-bold': require('./assets/fonts/montserrat/Montserrat-Bold.ttf'),
-            'montserrat-black': require('./assets/fonts/montserrat/Montserrat-Black.ttf'),
+    constructor(props) {
+        super(props);
+        this.state = {
+            isReady: false,
+        }
+    }
+
+    async componentDidMount() {
+        await Font.loadAsync({
+            'SFProDisplay_bold': require('./assets/fonts/SFProDisplay-Bold.ttf'),
+            'SFProDisplay_heavy': require('./assets/fonts/SFProDisplay-Heavy.ttf'),
+            'SFProDisplay_medium': require('./assets/fonts/SFProDisplay-Medium.ttf'),
+            'SFProDisplay_regular': require('./assets/fonts/SFProDisplay-Regular.ttf'),
         });
+        this.setState({ isReady: true});
     }
 
     render() {
+        if (!this.state.isReady) {
+            return <AppLoading />;
+        }
         return (
             <View style={styles.container}>
-                <ImageBackground source={require('./assets/imgs/colorful-gradient-layered-design-1024x576.jpg')} style={{width: width, height: height}}>
-                    <View style={styles.overlay}>
-                        <EventList/>
-                    </View>
-                </ImageBackground>
+                <Header/>
+                <EventList/>
             </View>
         );
     }
@@ -31,37 +42,8 @@ class App extends Component {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: '#231f40',
     },
-    overlay: {
-        // backgroundColor: 'rgba(0,0,0,0.3)',
-    },
-    meta: {
-        marginTop: 5,
-        lineHeight: 20,
-        fontWeight: 'bold',
-        fontSize: 18,
-        opacity: .8
-    },
-    listWrapper: {
-        marginTop: 55,
-        width: width,
-        height: height,
-        backgroundColor: '#082535',
-        borderRadius: 4,
-        shadowColor: '#3d3d3d',
-        shadowOffset: {
-            width: 0,
-            height: 4
-        },
-        shadowRadius: 8,
-        shadowOpacity: 0.1,
-        elevation: 1,
-        overflow: 'hidden'
-    },
-    newContainer: {
-        justifyContent: "center",
-    }
 });
 
 export default App;
