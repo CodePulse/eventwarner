@@ -1,26 +1,16 @@
 {
   "expo": {
     "name": "Event Traffic Warner",
-    "slug": "event-traffic-warner",
-    "privacy": "public",
-    "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "icon": "./assets/imgs/icon-final.png",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/imgs/icon-final.jpg",
+    "slug": "event-traffic-warner",
+    "sdkVersion": "36.0.0",
     "splash": {
-      "image": "./assets/imgs/etf-splash-final.jpg",
+      "image": "./assets/imgs/new-splash.png",
       "resizeMode": "cover"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": [
-      "**/*"
+      "assets/**/*"
     ],
     "ios": {
       "bundleIdentifier": "com.charismaconcept.eventtrafficewarner",
@@ -28,7 +18,9 @@
     },
     "android": {
       "package": "com.charismaconcept.eventtrafficewarner",
-      "versionCode": 1
-    }
+      "versionCode": 1,
+      "permissions": []
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }
