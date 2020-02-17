@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#302950',
         borderRadius: 20,
         flexDirection: 'row',
-        height: 150,
+        height: 140,
         paddingTop: 50,
         // paddingLeft: 20,
     },

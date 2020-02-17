@@ -4,6 +4,7 @@ import EventList from './components/EventList';
 import Header from './components/Header';
 import * as Font from 'expo-font';
 import {AppLoading} from "expo";
+import {AdMobBanner} from 'expo-ads-admob';
 const {width, height} = Dimensions.get('screen');
 
 class App extends Component {
@@ -32,6 +33,11 @@ class App extends Component {
             <View style={styles.container}>
                 <Header/>
                 <EventList/>
+                <AdMobBanner style={styles.admob}
+                    bannerSize="banner"
+                    adUnitID="ca-app-pub-6704626384420200/2256959412"
+                    servePersonalizedAds={true} // true or false
+                    onDidFailToReceiveAdWithError={this.bannerError} />
             </View>
         );
     }
@@ -43,6 +49,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#231f40',
         height: height,
     },
+    admob: {
+        marginTop:10,
+    }
 });
 
 export default App;

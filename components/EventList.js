@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
         width: 350,
     },
     upcomingEventsWrapper: {
-        paddingBottom: 30,
-        paddingTop: 30,
+        paddingBottom: 20,
+        paddingTop: 20,
     },
     eventList: {
         height: 300,
@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
     nextEventTitle: {
         color: 'white',
         fontSize: 25,
-        paddingTop: 25,
-        paddingBottom: 25,
+        paddingTop: 15,
+        paddingBottom: 15,
         fontFamily: 'SFProDisplay_heavy'
     },
     nextEventDate: {
